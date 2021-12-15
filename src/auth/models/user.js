@@ -12,7 +12,7 @@ const userModule = sequelize.define("user", {
       return jwt.sign(value, process.env.JWT_SECRET);
     },
     get() {
-      return jwt.sign({ username: this.username }, process.env.JWT_SECRET);
+      return jwt.sign({ username: this.username, role: this.role, email: this.email, capabilities: this.capabilities }, process.env.JWT_SECRET);
     },
   },
   role: {
