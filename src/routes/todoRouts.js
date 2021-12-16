@@ -18,7 +18,7 @@ router.post("/", barber, async (req, res) => {
     res.status(201).json(newTodo);
   } catch (error) {
     console.log(error);
-    res.json(error);
+    res.status(500).json(error);
   }
 });
 router.put("/:id", barber, async (req, res) => {
